@@ -4,28 +4,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav class="container">
-        <img src="" alt="logo" class="logo">
-        <div class="home">Home</div>
-        <div class="profile">Our Profile</div>
-        <div class="achievement">Achievement</div>
-        <div class="message">Message Us</div>
-    </nav>
-    <hr>
+    <header class="header-wrapper">
+        <img src="assets/logo.png" alt="logo" class="logo">
+        <div class="menu">
+            <button>Home</button>
+            <button>My Profile</button>
+            <button>Portofolio</button>
+            <button>Message Us</button>
+        </div>
+    </header>
 
-    <h1>Hi Irma, Welcome To Website</h1>
-    <h4>Ini adalah website latihan pertama</h4>
+    <main class="main-content">
+        <h3>Hi <span id="nama">Irma</span>, Welcome To Website</h3>
+    </main>
+
+    <div id="slider">
+        <img src="assets/sunset.jpg" class="slider-image" style="display: block;">
+        <img src="assets/cloud.jpg" class="slider-image" style="display: none;">
+        <img src="assets/danau.jpg" class="slider-image" style="display: none;">
+        <img src="assets/mount.jpg" class="slider-image" style="display: none;">
+        <img src="assets/mount2.jpg" class="slider-image" style="display: none;">
+    </div>
     
     <hr>
 
     <h1>Our Profile</h1>
     <div class="ourprofile">
-        <div class="circle"></div>
-        <h4>Usia 20 tahun</h4>
+        <div>
+            <div class="circle" style="background-image: url('assets/years.png');"></div>
+            <h4>20 Years Old</h4>
+        </div>
+
+        <div>
+            <div class="circle" style="background-image: url('assets/read.png');"></div>
+            <h4>Reading</h4>
+        </div>
+
+        <div>
+            <div class="circle" style="background-image: url(assets/food.png);"></div>
+            <h4>Food</h4>
+        </div>
+
+        <div>
+            <div class="circle" style="background-image: url('assets/travel.png');"></div>
+            <h4>Travelling</h4>
+        </div>
+
+        <div>
+            <div class="circle" style="background-image: url('assets/woman.png');"></div>
+            <h4>Woman</h4>
+        </div>
     </div>
-    
+    <hr>
+
+    <main style="flex-direction: row; display: flex;">
+    <div style="display: flex; flex: 1; align-content: center; justify-content: center;">
+        <h1>Message Us</h1>
+    <form name="message-form" onsubmit="return validateForm()">
+        <table>
+        <tr>
+        <td>Nama</td> 
+        <td>:
+            <input placeholder="Nama" type="text" name="full-name" />
+        </td>
+        </tr>
+        <br>
+
+        <tr>
+        <td>Tanggal Lahir</td>
+        <td> :
+            <input type="date" name="birth-date" />
+        </td>
+        </tr>
+        <br>
+
+        <tr>
+        <td>Jenis Kelamin</td>
+        <td>:
+            <input type="radio" id="male" name="gender" value="male" />
+            <label for="male">Laki-Laki</label>
+            <input type="radio" id="female" name="gender" value="male" />
+            <label for="female">Perempuan</label>
+        </td>
+        </tr>
+        <br />
+
+        <tr>
+        <td>Pesan</td>
+        <td>:
+            <textarea placeholder="Pesan" name="messages" cols="40" rows="5"></textarea>
+        </td>
+        </tr>
+        <br />
+
+        <tr>
+        <td><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+    </form>
+</div>
+    <br>
+
+    <div class="table" style="display: flex; flex: 1; align-content: center; justify-content: center;">
+        <table>
+            <tr>
+                <td><p><b>Current time:</b> Thur Dec 21 2023 11:27:28 GMT+01000</p></td>
+            <br>
+                <td><p><b>Nama :</b>Irma Nia Latifah</p></td>
+                <td><p><b>Tanggal Lahir :</b>14/06/2003</p></td>
+                <td><p><b>Jenis Kelamin :</b>Perempuan</p></td>
+                <td><p><b>Pesan :</b>Semangat belajar buat website cantik</p></td>
+            </tr>
+        </table>
+    </div>
+</main>
+
+    <div>
+        <p>Nama: <span id="sender-full-name"></span></p>
+        <p>Tanggal Lahir: <span id="sender-birth-date"></span></p>
+        <p>Pesan: <span id="sender-message"></span></p>
+    </div>
+
+    <script src="js/script.js"></script>
+
+    <footer class="container">
+        <small>Created By IrmaNia</small>
+    </footer>
+
 </body>
 </html>
